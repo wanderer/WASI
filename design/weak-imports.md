@@ -6,17 +6,17 @@ WASI API.  For example, if a WASI API evolves to include a new function a
 program might want to continue to run on older systems that don't yet support
 the new function.  In this case a weak import mechanism allows the program to
 run on older systems and detect the presence of the function at runtime.
-Another use case might be a API that is not applicable on certain embedding.
-In this case weak import would allow program to run continue to run on such
-an embedded, albeit with reduced or modified behavior.
+Another use case might be a API that is not applicable on certain embedding.  In
+this case weak import would allow program to run continue to run on such an
+embedded, albeit with reduced or modified behavior.
 
 Note: The term weak here refers to a type of symbol reference used by a linker
-and comes from the ELF specification.  It is not related to the WebAssembly
-weakref proposal or to garbage collection.
+and comes from the ELF specification.  It is not related to the JavaScript
+[weakrefs] proposal or to garbage collection.
 
 WebAssembly itself does not currently provide a mechanism for weak imports.
-There is some discussion of adding it the spec [^1], and WASI would
-likely use such a feature if/when it is added.
+There is some discussion of adding it the [spec][spec], and WASI would likely
+use such a feature if/when it is added.
 
 This document describes the mechanism used by WASI to achieve a form of weak
 import on top of the existing primitives.  Currently this is only defined for
@@ -64,4 +64,5 @@ if i32
 end
 ```
 
-[^1]: https://github.com/WebAssembly/design/issues/1281
+[weakrefs]: https://github.com/tc39/proposal-weakrefs
+[spec]: https://github.com/WebAssembly/design/issues/1281
