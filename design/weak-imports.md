@@ -10,9 +10,9 @@ Another use case might be a API that is not applicable on certain embedding.  In
 this case weak import would allow program to run continue to run on such an
 embedded, albeit with reduced or modified behavior.
 
-Note: The term weak here refers to a type of symbol reference used by a linker
-and comes from the ELF specification.  It is not related to the JavaScript
-[weakrefs] proposal or to garbage collection.
+*Note*: The term *weak* here refers to a type of symbol reference used by a
+linker and comes from the ELF specification.  It is not related to the
+JavaScript [weakrefs] proposal or to garbage collection.
 
 WebAssembly itself does not currently provide a mechanism for weak imports.
 There is some discussion of adding it the [spec][spec], and WASI would likely
