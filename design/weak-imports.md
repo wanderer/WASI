@@ -6,6 +6,13 @@ WASI API.  For example, if a WASI API evolves to include a new function a
 program might want to continue to run on older systems that don't yet support
 the new function.  In this case a weak import mechanism allows the program to
 run on older systems and detect the presence of the function at runtime.
+Another use case might be a API that is not applicable on certain embedding.
+In this case weak import would allow program to run continue to run on such
+an embedded, albeit with reduced or modified behavior.
+
+Note: The term weak here refers to a type of symbol reference used by a linker
+and comes from the ELF specification.  It is not related to the WebAssembly
+weakref proposal or to garbage collection.
 
 WebAssembly itself does not currently provide a mechanism for weak imports.
 There is some discussion of adding it the spec [^1], and WASI would
